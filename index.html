@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Some of Sumi is a migrated food blog and NYC food diary by Sumayia Rashid.">
+  <title>Some of Sumi | Food Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Some of Sumi</a>
+    <nav aria-label="Primary navigation">
+      <a href="#journal">Journal</a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="--hero-image: url('assets/images/shao-bing-01.jpg')">
+      <div class="hero-content">
+        <p class="eyebrow">Migrated from Blogger</p>
+        <h1>Some of Sumi</h1>
+        <p>A personal food diary of NYC meals, sweet treats, cafe stops, birthdays, and little cravings worth remembering.</p>
+        <a class="primary-link" href="#journal">Browse 50 posts</a>
+      </div>
+    </section>
+
+    <section class="intro-band" aria-label="Blog summary">
+      <div>
+        <p class="stat-number">50</p>
+        <p>Food notes migrated</p>
+      </div>
+      <div>
+        <p class="stat-number">2023-2026</p>
+        <p>Archive years</p>
+      </div>
+      <div>
+        <p class="stat-number">46</p>
+        <p>Photo posts</p>
+      </div>
+    </section>
+
+    <section id="journal" class="section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Latest bites</p>
+        <h2>Food Journal</h2>
+      </div>
+
+      <div class="controls" aria-label="Filter posts">
+        <label class="search-field">
+          <span>Search</span>
+          <input id="post-search" type="search" placeholder="Search dishes, places, memories">
+        </label>
+        <div class="filter-row" role="list" aria-label="Filter by tag">
+          <button class="filter-button is-active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="food">Food</button><button class="filter-button" type="button" data-filter="celebrations">Celebrations</button><button class="filter-button" type="button" data-filter="dessert">Dessert</button><button class="filter-button" type="button" data-filter="drinks">Drinks</button><button class="filter-button" type="button" data-filter="home">Home</button><button class="filter-button" type="button" data-filter="meals">Meals</button><button class="filter-button" type="button" data-filter="nyc eats">NYC Eats</button>
+        </div>
+      </div>
+
+      <p class="result-count" aria-live="polite"><span id="visible-count">50</span> posts showing</p>
+
+      <div class="post-grid" id="post-grid">
+
+        <article class="post-card" data-title="shao bing" data-tags="food meals" data-date="2026-06-03 2026" data-excerpt="i tried shao bing with chicken katsu for the first time at peng&#39;s noodle folk the other day. it was great!">
+          <a class="card-image" href="posts/shao-bing.html" aria-label="Read Shao Bing">
+            <img src="assets/images/shao-bing-01.jpg" alt="Shao Bing" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">June 3, 2026</p>
+            <h3><a href="posts/shao-bing.html">Shao Bing</a></h3>
+            <p>I tried Shao Bing with chicken katsu for the first time at Peng&#39;s Noodle Folk the other day. It was great!</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="ramadan" data-tags="food home" data-date="2026-02-10 2026" data-excerpt="i will be sharing some fun ramadan recipes soon!">
+          <a class="card-image" href="posts/ramadan.html" aria-label="Read Ramadan">
+            <div class="post-placeholder" aria-hidden="true"><span>Some of Sumi</span></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">February 10, 2026</p>
+            <h3><a href="posts/ramadan.html">Ramadan</a></h3>
+            <p>I will be sharing some fun Ramadan recipes soon!</p>
+            <div class="tag-row"><span>Food</span><span>Home</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="felice 83" data-tags="food nyc eats" data-date="2026-02-05 2026" data-excerpt="kim and i went to felice 83 in the upper east side for nyc restaurant week.">
+          <a class="card-image" href="posts/felice-83.html" aria-label="Read Felice 83">
+            <img src="assets/images/felice-83-01.jpg" alt="Felice 83" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">February 5, 2026</p>
+            <h3><a href="posts/felice-83.html">Felice 83</a></h3>
+            <p>Kim and I went to Felice 83 in the Upper East Side for NYC Restaurant week.</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="tao downtown" data-tags="food drinks meals nyc eats" data-date="2026-01-12 2026" data-excerpt="crispy shrimp dumplings">
+          <a class="card-image" href="posts/tao-downtown.html" aria-label="Read Tao Downtown">
+            <img src="assets/images/tao-downtown-01.jpg" alt="Tao Downtown" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">January 12, 2026</p>
+            <h3><a href="posts/tao-downtown.html">Tao Downtown</a></h3>
+            <p>Crispy shrimp dumplings</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="chai n hot chocalate" data-tags="food dessert drinks" data-date="2026-01-12 2026" data-excerpt="drinking chai and hot chocolate every year is a tradition i refuse to skip. this winter, i enjoyed a cup of chai over six inches of snow. i also relished a cup of hot chocolate with my sister after sneaking out at night to play in the snow.">
+          <a class="card-image" href="posts/chai-n-hot-chocalate.html" aria-label="Read Chai n Hot Chocalate">
+            <div class="image-stack"><img src="assets/images/chai-n-hot-chocalate-01.jpg" alt="Chai n Hot Chocalate photo 1" loading="lazy"><img src="assets/images/chai-n-hot-chocalate-02.jpg" alt="Chai n Hot Chocalate photo 2" loading="lazy"><img src="assets/images/chai-n-hot-chocalate-03.jpg" alt="Chai n Hot Chocalate photo 3" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">January 12, 2026</p>
+            <h3><a href="posts/chai-n-hot-chocalate.html">Chai n Hot Chocalate</a></h3>
+            <p>Drinking chai and hot chocolate every year is a tradition I refuse to skip. This winter, I enjoyed a cup of chai over six inches of snow. I also relished a cup of hot chocolate with my sister after sneaking out at night to play in the snow.</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="ladies at ladureeeee" data-tags="food drinks nyc eats celebrations" data-date="2026-01-12 2026" data-excerpt="laduree has been on my bucket list for so long and i am so glad i was able to go here. i caught up with a friend i carpooled with in middle school. we got the teatime for two and was able to choose the drinks we got. it was such a pleasant experience. i would highly recommend!">
+          <a class="card-image" href="posts/ladies-at-ladureeeee.html" aria-label="Read Ladies at Ladureeeee">
+            <div class="image-stack"><img src="assets/images/ladies-at-ladureeeee-01.jpg" alt="Ladies at Ladureeeee photo 1" loading="lazy"><img src="assets/images/ladies-at-ladureeeee-02.jpg" alt="Ladies at Ladureeeee photo 2" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">January 12, 2026</p>
+            <h3><a href="posts/ladies-at-ladureeeee.html">Ladies at Ladureeeee</a></h3>
+            <p>Laduree has been on my bucket list for so long and I am so glad I was able to go here. I caught up with a friend I carpooled with in middle school. We got the teatime for two and was able to choose the drinks we got. It was such a pleasant experience. I would highly recommend!</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="hackathon food" data-tags="food dessert drinks meals" data-date="2026-01-12 2026" data-excerpt="at the stack the future hackathon, schrödinger fed the hackers well. i got...">
+          <a class="card-image" href="posts/hackathon-food.html" aria-label="Read Hackathon food">
+            <div class="image-stack"><img src="assets/images/hackathon-food-01.jpg" alt="Hackathon food photo 1" loading="lazy"><img src="assets/images/hackathon-food-02.jpg" alt="Hackathon food photo 2" loading="lazy"><img src="assets/images/hackathon-food-03.jpg" alt="Hackathon food photo 3" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">January 12, 2026</p>
+            <h3><a href="posts/hackathon-food.html">Hackathon food</a></h3>
+            <p>At the Stack the Future hackathon, Schrödinger fed the hackers well. I got...</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="matari yemeni coffee" data-tags="food dessert drinks meals nyc eats" data-date="2025-12-18 2025" data-excerpt="a new cafe opened up near me and i&#39;ve been meaning to go for a while. as i waited to be picked up, i cut my time by exploring this new cafe. as recommended by the barista, i bought a mofawar and a ferrero cake for my sister.">
+          <a class="card-image" href="posts/matari-yemeni-coffee.html" aria-label="Read Matari Yemeni Coffee">
+            <div class="image-stack"><img src="assets/images/matari-yemeni-coffee-01.jpg" alt="Matari Yemeni Coffee photo 1" loading="lazy"><img src="assets/images/matari-yemeni-coffee-02.jpg" alt="Matari Yemeni Coffee photo 2" loading="lazy"><img src="assets/images/matari-yemeni-coffee-03.jpg" alt="Matari Yemeni Coffee photo 3" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">December 18, 2025</p>
+            <h3><a href="posts/matari-yemeni-coffee.html">Matari Yemeni Coffee</a></h3>
+            <p>A new cafe opened up near me and I&#39;ve been meaning to go for a while. As I waited to be picked up, I cut my time by exploring this new cafe. As recommended by the barista, I bought a Mofawar and a Ferrero cake for my sister.</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="tropical jerk" data-tags="food meals nyc eats" data-date="2025-12-18 2025" data-excerpt="funny story. i am on my way to the bus stop after the gym and i hop on the bus. i search for my wallet in my jacket pocket to pay the fare and i can&#39;t find it. i&#39;m like ok it&#39;s probably in my gym bag. i go sit to find my wallet, frantically. i still can&#39;t find it. i&#39;m like i have to still pay the fare so i pay the fare with apple pay. then, i get off two stops later to search for my card holder.">
+          <a class="card-image" href="posts/tropical-jerk.html" aria-label="Read Tropical Jerk">
+            <div class="image-stack"><img src="assets/images/tropical-jerk-01.jpg" alt="Tropical Jerk photo 1" loading="lazy"><img src="assets/images/tropical-jerk-02.jpg" alt="Tropical Jerk photo 2" loading="lazy"><img src="assets/images/tropical-jerk-03.jpg" alt="Tropical Jerk photo 3" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">December 18, 2025</p>
+            <h3><a href="posts/tropical-jerk.html">Tropical Jerk</a></h3>
+            <p>Funny story. I am on my way to the bus stop after the gym and I hop on the bus. I search for my wallet in my jacket pocket to pay the fare and I can&#39;t find it. I&#39;m like ok it&#39;s probably in my gym bag. I go sit to find my wallet, frantically. I still can&#39;t find it. I&#39;m like I have to still pay the fare so I pay the fare with Apple Pay. Then, I get off two stops later to search for my card holder.</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="personal business" data-tags="food home" data-date="2025-09-23 2025" data-excerpt="i really want to convert this to a personal business but i don&#39;t know how. i want to somehow merge beauty, health, and tech to embrace femininity. there is strength in softness.">
+          <a class="card-image" href="posts/personal-business.html" aria-label="Read Personal business">
+            <div class="post-placeholder" aria-hidden="true"><span>Some of Sumi</span></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 23, 2025</p>
+            <h3><a href="posts/personal-business.html">Personal business</a></h3>
+            <p>I really want to convert this to a personal business but I don&#39;t know how. I want to somehow merge beauty, health, and tech to embrace femininity. There is strength in softness.</p>
+            <div class="tag-row"><span>Food</span><span>Home</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="strawberries" data-tags="food dessert nyc eats" data-date="2025-08-27 2025" data-excerpt="as you can see, most of my posts are food spots around nyc. some outside of nyc. however, the older i get, i get more conscious about what i put into my body. i wouldn&#39;t want any diseases, you know?">
+          <a class="card-image" href="posts/strawberries.html" aria-label="Read Strawberries">
+            <img src="assets/images/strawberries-01.jpg" alt="Strawberries" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">August 27, 2025</p>
+            <h3><a href="posts/strawberries.html">Strawberries</a></h3>
+            <p>As you can see, most of my posts are food spots around NYC. Some outside of NYC. However, the older I get, I get more conscious about what I put into my body. I wouldn&#39;t want any diseases, you know?</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="salmon and a free drink at dizzy&#39;s club" data-tags="food drinks meals nyc eats" data-date="2025-08-27 2025" data-excerpt="salmon with some veggies and a free drink at dizzy&#39;s club">
+          <a class="card-image" href="posts/salmon-and-a-free-drink-at-dizzy-s-club.html" aria-label="Read Salmon and a free drink at Dizzy&#39;s Club">
+            <img src="assets/images/salmon-and-a-free-drink-at-dizzy-s-club-01.jpg" alt="Salmon and a free drink at Dizzy&#39;s Club" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">August 27, 2025</p>
+            <h3><a href="posts/salmon-and-a-free-drink-at-dizzy-s-club.html">Salmon and a free drink at Dizzy&#39;s Club</a></h3>
+            <p>Salmon with some veggies and a free drink at Dizzy&#39;s Club</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="spicy salmon sushi roll and a lychee martini from mito" data-tags="food drinks meals nyc eats" data-date="2025-08-27 2025" data-excerpt="got the happy hour deal that ends at 6.">
+          <a class="card-image" href="posts/spicy-salmon-sushi-roll-and-a-lychee-martini-from-mito.html" aria-label="Read Spicy salmon sushi roll and a lychee martini from Mito">
+            <img src="assets/images/spicy-salmon-sushi-roll-and-a-lychee-martini-from-mito-01.jpg" alt="Spicy salmon sushi roll and a lychee martini from Mito" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">August 27, 2025</p>
+            <h3><a href="posts/spicy-salmon-sushi-roll-and-a-lychee-martini-from-mito.html">Spicy salmon sushi roll and a lychee martini from Mito</a></h3>
+            <p>Got the happy hour deal that ends at 6.</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="matcha cake and hot ginger lemon tea from cafe catmandoo" data-tags="food dessert drinks nyc eats" data-date="2025-08-27 2025" data-excerpt="forgive me. i am not on my laptop much and i can only update my blog via a laptop.">
+          <a class="card-image" href="posts/matcha-cake-and-hot-ginger-lemon-tea-from-cafe-catmandoo.html" aria-label="Read Matcha cake and hot ginger lemon tea from Cafe Catmandoo">
+            <img src="assets/images/matcha-cake-and-hot-ginger-lemon-tea-from-cafe-catmandoo-01.jpg" alt="Matcha cake and hot ginger lemon tea from Cafe Catmandoo" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">August 27, 2025</p>
+            <h3><a href="posts/matcha-cake-and-hot-ginger-lemon-tea-from-cafe-catmandoo.html">Matcha cake and hot ginger lemon tea from Cafe Catmandoo</a></h3>
+            <p>Forgive me. I am not on my laptop much and I can only update my blog via a laptop.</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="strawberry milkshake" data-tags="food dessert drinks nyc eats celebrations" data-date="2025-08-09 2025" data-excerpt="you can&#39;t get girlier than drinking a strawberry milkshake in the summertime. my aunt and cousin, who lives in bangladesh, helped me make this. thank you khalamonin and arisha muni!">
+          <a class="card-image" href="posts/strawberry-milkshake.html" aria-label="Read Strawberry milkshake">
+            <div class="post-placeholder" aria-hidden="true"><span>Some of Sumi</span></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">August 9, 2025</p>
+            <h3><a href="posts/strawberry-milkshake.html">Strawberry milkshake</a></h3>
+            <p>You can&#39;t get girlier than drinking a strawberry milkshake in the summertime. My aunt and cousin, who lives in Bangladesh, helped me make this. Thank you khalamonin and Arisha muni!</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="home cooked meals" data-tags="food meals home celebrations" data-date="2025-08-04 2025" data-excerpt="as i get older, i recognize the importance of home cooked meals. that is, appreciating my mother&#39;s meals that she works so hard to cook as a working mom. that is when she doesn&#39;t bring home take out that i try not to eat because of how unhealthy it could be.">
+          <a class="card-image" href="posts/home-cooked-meals.html" aria-label="Read Home Cooked Meals">
+            <div class="post-placeholder" aria-hidden="true"><span>Some of Sumi</span></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">August 4, 2025</p>
+            <h3><a href="posts/home-cooked-meals.html">Home Cooked Meals</a></h3>
+            <p>As I get older, I recognize the importance of home cooked meals. That is, appreciating my mother&#39;s meals that she works so hard to cook as a working mom. That is when she doesn&#39;t bring home take out that I try not to eat because of how unhealthy it could be.</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>Home</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="dubai chocalate affogato" data-tags="food dessert drinks" data-date="2025-06-13 2025" data-excerpt="sicilian arancini">
+          <a class="card-image" href="posts/dubai-chocalate-affogato.html" aria-label="Read Dubai Chocalate Affogato">
+            <img src="assets/images/dubai-chocalate-affogato-01.jpg" alt="Dubai Chocalate Affogato" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">June 13, 2025</p>
+            <h3><a href="posts/dubai-chocalate-affogato.html">Dubai Chocalate Affogato</a></h3>
+            <p>Sicilian Arancini</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="latte" data-tags="food drinks" data-date="2025-06-13 2025" data-excerpt="joe coffee">
+          <a class="card-image" href="posts/latte.html" aria-label="Read Latte">
+            <img src="assets/images/latte-01.jpg" alt="Latte" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">June 13, 2025</p>
+            <h3><a href="posts/latte.html">Latte</a></h3>
+            <p>Joe Coffee</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="pastel de nata" data-tags="food dessert" data-date="2025-06-13 2025" data-excerpt="foodcellar market">
+          <a class="card-image" href="posts/pastel-de-nata.html" aria-label="Read Pastel de nata">
+            <img src="assets/images/pastel-de-nata-01.jpg" alt="Pastel de nata" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">June 13, 2025</p>
+            <h3><a href="posts/pastel-de-nata.html">Pastel de nata</a></h3>
+            <p>Foodcellar Market</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="truffle fries" data-tags="food meals" data-date="2025-06-13 2025" data-excerpt="no good burger truck">
+          <a class="card-image" href="posts/truffle-fries.html" aria-label="Read Truffle Fries">
+            <img src="assets/images/truffle-fries-01.jpg" alt="Truffle Fries" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">June 13, 2025</p>
+            <h3><a href="posts/truffle-fries.html">Truffle Fries</a></h3>
+            <p>No Good Burger Truck</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="vaniglia macaron" data-tags="food dessert nyc eats" data-date="2025-06-13 2025" data-excerpt="60 university pl, new york, ny 10003">
+          <a class="card-image" href="posts/vaniglia-macaron.html" aria-label="Read Vaniglia Macaron">
+            <img src="assets/images/vaniglia-macaron-01.jpg" alt="Vaniglia Macaron" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">June 13, 2025</p>
+            <h3><a href="posts/vaniglia-macaron.html">Vaniglia Macaron</a></h3>
+            <p>60 University Pl, New York, NY 10003</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="cool pink mocktail with childhood bestie last summer" data-tags="food drinks nyc eats celebrations" data-date="2025-04-28 2025" data-excerpt="55 carmine st , new york, ny 10014">
+          <a class="card-image" href="posts/cool-pink-mocktail-with-childhood-bestie-last-summer.html" aria-label="Read cool pink mocktail with childhood bestie last summer">
+            <img src="assets/images/cool-pink-mocktail-with-childhood-bestie-last-summer-01.jpg" alt="cool pink mocktail with childhood bestie last summer" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">April 28, 2025</p>
+            <h3><a href="posts/cool-pink-mocktail-with-childhood-bestie-last-summer.html">cool pink mocktail with childhood bestie last summer</a></h3>
+            <p>55 Carmine St , New York, NY 10014</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="cheesecake and passion fruit drink" data-tags="food dessert drinks nyc eats" data-date="2025-04-28 2025" data-excerpt="920 broadway brooklyn, ny 11206">
+          <a class="card-image" href="posts/cheesecake-and-passion-fruit-drink.html" aria-label="Read Cheesecake and passion fruit drink">
+            <img src="assets/images/cheesecake-and-passion-fruit-drink-01.jpg" alt="Cheesecake and passion fruit drink" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">April 28, 2025</p>
+            <h3><a href="posts/cheesecake-and-passion-fruit-drink.html">Cheesecake and passion fruit drink</a></h3>
+            <p>920 Broadway Brooklyn, NY 11206</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Drinks</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="baby pancakes" data-tags="food dessert" data-date="2025-04-28 2025" data-excerpt="baby pancakes. also from costco.">
+          <a class="card-image" href="posts/baby-pancakes.html" aria-label="Read baby pancakes">
+            <img src="assets/images/baby-pancakes-01.jpg" alt="baby pancakes" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">April 28, 2025</p>
+            <h3><a href="posts/baby-pancakes.html">baby pancakes</a></h3>
+            <p>baby pancakes. also from costco.</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="current lunch go-to" data-tags="food meals home" data-date="2025-04-28 2025" data-excerpt="naan with turkey slices from costco, with chick-fil-a sauce (courtesy of my sister).">
+          <a class="card-image" href="posts/current-lunch-go-to.html" aria-label="Read Current lunch go-to">
+            <img src="assets/images/current-lunch-go-to-01.jpg" alt="Current lunch go-to" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">April 28, 2025</p>
+            <h3><a href="posts/current-lunch-go-to.html">Current lunch go-to</a></h3>
+            <p>Naan with Turkey slices from costco, with chick-fil-a sauce (courtesy of my sister).</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>Home</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="bagel blvd" data-tags="food meals nyc eats celebrations" data-date="2025-04-15 2025" data-excerpt="address: 11663 queens blvd, forest hills, ny 11375">
+          <a class="card-image" href="posts/bagel-blvd.html" aria-label="Read Bagel Blvd">
+            <div class="image-stack"><img src="assets/images/bagel-blvd-01.jpg" alt="Bagel Blvd photo 1" loading="lazy"><img src="assets/images/bagel-blvd-02.jpg" alt="Bagel Blvd photo 2" loading="lazy"><img src="assets/images/bagel-blvd-03.jpg" alt="Bagel Blvd photo 3" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">April 15, 2025</p>
+            <h3><a href="posts/bagel-blvd.html">Bagel Blvd</a></h3>
+            <p>Address: 11663 Queens Blvd, Forest Hills, NY 11375</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="strange flavor burger shack" data-tags="food meals" data-date="2025-04-02 2025" data-excerpt="my mom loves fries from mcdonald&#39;s.">
+          <a class="card-image" href="posts/strange-flavor-burger-shack.html" aria-label="Read Strange Flavor Burger Shack">
+            <div class="image-stack"><img src="assets/images/strange-flavor-burger-shack-01.jpg" alt="Strange Flavor Burger Shack photo 1" loading="lazy"><img src="assets/images/strange-flavor-burger-shack-02.jpg" alt="Strange Flavor Burger Shack photo 2" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">April 2, 2025</p>
+            <h3><a href="posts/strange-flavor-burger-shack.html">Strange Flavor Burger Shack</a></h3>
+            <p>My mom loves fries from McDonald&#39;s.</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="very berry tart from paris baguette" data-tags="food dessert nyc eats" data-date="2025-03-12 2025" data-excerpt="a small food memory from some of sumi.">
+          <a class="card-image" href="posts/very-berry-tart-from-paris-baguette.html" aria-label="Read Very berry tart from Paris Baguette">
+            <img src="assets/images/very-berry-tart-from-paris-baguette-01.jpg" alt="Very berry tart from Paris Baguette" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">March 12, 2025</p>
+            <h3><a href="posts/very-berry-tart-from-paris-baguette.html">Very berry tart from Paris Baguette</a></h3>
+            <p>A small food memory from Some of Sumi.</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="salad from paris baguette" data-tags="food meals nyc eats" data-date="2025-03-12 2025" data-excerpt="a small food memory from some of sumi.">
+          <a class="card-image" href="posts/salad-from-paris-baguette.html" aria-label="Read Salad from Paris Baguette">
+            <img src="assets/images/salad-from-paris-baguette-01.jpg" alt="Salad from Paris Baguette" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">March 12, 2025</p>
+            <h3><a href="posts/salad-from-paris-baguette.html">Salad from Paris Baguette</a></h3>
+            <p>A small food memory from Some of Sumi.</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="matka, matka, matka!" data-tags="food drinks meals" data-date="2024-02-04 2024" data-excerpt="matka live kitchen, located in tangail, bangladesh, offers a diverse range of dishes. my cousins and i grabbed some hot wings, chicken momos, chicken chowmein, and a simple chicken burger. however, they&#39;re popular for their &quot;matka tea.&quot;">
+          <a class="card-image" href="posts/matka-matka-matka.html" aria-label="Read Matka, Matka, Matka!">
+            <div class="image-stack"><img src="assets/images/matka-matka-matka-01.jpg" alt="Matka, Matka, Matka! photo 1" loading="lazy"><img src="assets/images/matka-matka-matka-02.jpg" alt="Matka, Matka, Matka! photo 2" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">February 4, 2024</p>
+            <h3><a href="posts/matka-matka-matka.html">Matka, Matka, Matka!</a></h3>
+            <p>Matka Live Kitchen, located in Tangail, Bangladesh, offers a diverse range of dishes. My cousins and I grabbed some hot wings, chicken momos, chicken chowmein, and a simple chicken burger. However, they&#39;re popular for their &quot;Matka Tea.&quot;</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="authentic bangladeshi food!" data-tags="food meals" data-date="2024-02-04 2024" data-excerpt="hey, it’s been a while. last semester was intensive, so i’m back with a brand new twist: authentic bangladeshi food. i’m bangladeshi and this past winter i went to visit for three weeks and had the most delicious, fresh food ever.">
+          <a class="card-image" href="posts/authentic-bangladeshi-food.html" aria-label="Read Authentic Bangladeshi Food!">
+            <div class="image-stack"><img src="assets/images/authentic-bangladeshi-food-01.jpg" alt="Authentic Bangladeshi Food! photo 1" loading="lazy"><img src="assets/images/authentic-bangladeshi-food-02.jpg" alt="Authentic Bangladeshi Food! photo 2" loading="lazy"></div>
+          </a>
+          <div class="card-body">
+            <p class="post-meta">February 4, 2024</p>
+            <h3><a href="posts/authentic-bangladeshi-food.html">Authentic Bangladeshi Food!</a></h3>
+            <p>Hey, it’s been a while. Last semester was intensive, so I’m back with a brand new twist: authentic Bangladeshi food. I’m Bangladeshi and this past winter I went to visit for three weeks and had the most delicious, fresh food ever.</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="fall fever!" data-tags="food" data-date="2023-10-15 2023" data-excerpt="mixing it up with some fall vibes! these brownies from target are to die for!">
+          <a class="card-image" href="posts/fall-fever.html" aria-label="Read Fall Fever!">
+            <img src="assets/images/fall-fever-01.jpg" alt="Fall Fever!" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">October 15, 2023</p>
+            <h3><a href="posts/fall-fever.html">Fall Fever!</a></h3>
+            <p>Mixing it up with some fall vibes! These brownies from Target are to die for!</p>
+            <div class="tag-row"><span>Food</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title=" terry and yaki!" data-tags="food" data-date="2023-09-24 2023" data-excerpt="68th st between lexington &amp; 3rd av">
+          <a class="card-image" href="posts/terry-and-yaki.html" aria-label="Read  Terry and Yaki!">
+            <img src="assets/images/terry-and-yaki-01.jpg" alt=" Terry and Yaki!" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 24, 2023</p>
+            <h3><a href="posts/terry-and-yaki.html"> Terry and Yaki!</a></h3>
+            <p>68th St between Lexington &amp; 3rd Av</p>
+            <div class="tag-row"><span>Food</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="cecconi&#39;s dumbo" data-tags="food nyc eats" data-date="2023-09-14 2023" data-excerpt="55 water st, brooklyn, ny 11201">
+          <a class="card-image" href="posts/cecconi-s-dumbo.html" aria-label="Read Cecconi&#39;s DUMBO">
+            <img src="assets/images/cecconi-s-dumbo-01.jpg" alt="Cecconi&#39;s DUMBO" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 14, 2023</p>
+            <h3><a href="posts/cecconi-s-dumbo.html">Cecconi&#39;s DUMBO</a></h3>
+            <p>55 Water St, Brooklyn, NY 11201</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="din soup dumplings" data-tags="food meals nyc eats celebrations" data-date="2023-09-12 2023" data-excerpt="162 montague st fl 1, brooklyn, ny 11201">
+          <a class="card-image" href="posts/din-soup-dumplings.html" aria-label="Read Din Soup Dumplings">
+            <img src="assets/images/din-soup-dumplings-01.jpg" alt="Din Soup Dumplings" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 12, 2023</p>
+            <h3><a href="posts/din-soup-dumplings.html">Din Soup Dumplings</a></h3>
+            <p>162 Montague St Fl 1, Brooklyn, NY 11201</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="italian for my 18th" data-tags="food nyc eats celebrations" data-date="2023-09-11 2023" data-excerpt="147 w 43rd st, new york, ny 10036">
+          <a class="card-image" href="posts/italian-for-my-18th.html" aria-label="Read Italian for my 18th">
+            <img src="assets/images/italian-for-my-18th-01.jpg" alt="Italian for my 18th" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 11, 2023</p>
+            <h3><a href="posts/italian-for-my-18th.html">Italian for my 18th</a></h3>
+            <p>147 W 43rd St, New York, NY 10036</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span><span>Celebrations</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="top of the thai" data-tags="food meals nyc eats" data-date="2023-09-07 2023" data-excerpt="55 carmine st, new york, ny 10014">
+          <a class="card-image" href="posts/top-of-the-thai.html" aria-label="Read Top of the Thai">
+            <img src="assets/images/top-of-the-thai-01.jpg" alt="Top of the Thai" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 7, 2023</p>
+            <h3><a href="posts/top-of-the-thai.html">Top of the Thai</a></h3>
+            <p>55 Carmine St, New York, NY 10014</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="milk + honey" data-tags="food nyc eats" data-date="2023-09-06 2023" data-excerpt="1119 newkirk ave, brooklyn, ny 11230">
+          <a class="card-image" href="posts/milk-honey.html" aria-label="Read Milk + Honey">
+            <img src="assets/images/milk-honey-01.jpg" alt="Milk + Honey" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 6, 2023</p>
+            <h3><a href="posts/milk-honey.html">Milk + Honey</a></h3>
+            <p>1119 NEWKIRK AVE, BROOKLYN, NY 11230</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="bubby&#39;s!" data-tags="food drinks meals nyc eats" data-date="2023-09-04 2023" data-excerpt="120 hudson st, new york, ny 10013">
+          <a class="card-image" href="posts/bubby-s.html" aria-label="Read Bubby&#39;s!">
+            <img src="assets/images/bubby-s-01.jpg" alt="Bubby&#39;s!" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 4, 2023</p>
+            <h3><a href="posts/bubby-s.html">Bubby&#39;s!</a></h3>
+            <p>120 Hudson St, New York, NY 10013</p>
+            <div class="tag-row"><span>Food</span><span>Drinks</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="thai" data-tags="food meals nyc eats" data-date="2023-09-03 2023" data-excerpt="1411 2nd ave, new york, ny 10021">
+          <a class="card-image" href="posts/thai.html" aria-label="Read Thai">
+            <img src="assets/images/thai-01.jpg" alt="Thai" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 3, 2023</p>
+            <h3><a href="posts/thai.html">Thai</a></h3>
+            <p>1411 2nd Ave, New York, NY 10021</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="jose luis little italy" data-tags="food nyc eats" data-date="2023-09-01 2023" data-excerpt="great pasta and illuminating decorations!">
+          <a class="card-image" href="posts/jose-luis-little-italy.html" aria-label="Read Jose Luis Little Italy">
+            <img src="assets/images/jose-luis-little-italy-01.jpg" alt="Jose Luis Little Italy" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/jose-luis-little-italy.html">Jose Luis Little Italy</a></h3>
+            <p>Great pasta and illuminating decorations!</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="halal thai!" data-tags="food meals nyc eats" data-date="2023-09-01 2023" data-excerpt="235 sullivan street, new york, ny">
+          <a class="card-image" href="posts/halal-thai.html" aria-label="Read Halal Thai!">
+            <img src="assets/images/halal-thai-01.jpg" alt="Halal Thai!" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/halal-thai.html">Halal Thai!</a></h3>
+            <p>235 Sullivan Street, New York, NY</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="donuts 4 dessert!" data-tags="food dessert nyc eats" data-date="2023-09-01 2023" data-excerpt="195 broadway, new york, ny 10007">
+          <a class="card-image" href="posts/donuts-4-dessert.html" aria-label="Read Donuts 4 Dessert!">
+            <img src="assets/images/donuts-4-dessert-01.jpg" alt="Donuts 4 Dessert!" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/donuts-4-dessert.html">Donuts 4 Dessert!</a></h3>
+            <p>195 Broadway, New York, NY 10007</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="golden birthday" data-tags="food nyc eats celebrations" data-date="2023-09-01 2023" data-excerpt="195 broadway, new york, ny 10007">
+          <a class="card-image" href="posts/golden-birthday.html" aria-label="Read Golden Birthday">
+            <img src="assets/images/golden-birthday-01.jpg" alt="Golden Birthday" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/golden-birthday.html">Golden Birthday</a></h3>
+            <p>195 Broadway, New York, NY 10007</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span><span>Celebrations</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="sweet 16 treat" data-tags="food dessert nyc eats celebrations" data-date="2023-09-01 2023" data-excerpt="9 crosby st, new york, ny 10013">
+          <a class="card-image" href="posts/sweet-16-treat.html" aria-label="Read Sweet 16 Treat">
+            <img src="assets/images/sweet-16-treat-01.jpg" alt="Sweet 16 Treat" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/sweet-16-treat.html">Sweet 16 Treat</a></h3>
+            <p>9 Crosby St, New York, NY 10013</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="amber" data-tags="food nyc eats" data-date="2023-09-01 2023" data-excerpt="1406 3rd ave, new york, ny 10075">
+          <a class="card-image" href="posts/amber.html" aria-label="Read Amber">
+            <img src="assets/images/amber-01.jpg" alt="Amber" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/amber.html">Amber</a></h3>
+            <p>1406 3rd Ave, New York, NY 10075</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="mariam&#39;s birthday lunch" data-tags="food meals nyc eats celebrations" data-date="2023-09-01 2023" data-excerpt="282 flatbush ave, brooklyn, ny 11217">
+          <a class="card-image" href="posts/mariam-s-birthday-lunch.html" aria-label="Read Mariam&#39;s Birthday Lunch">
+            <img src="assets/images/mariam-s-birthday-lunch-01.jpg" alt="Mariam&#39;s Birthday Lunch" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/mariam-s-birthday-lunch.html">Mariam&#39;s Birthday Lunch</a></h3>
+            <p>282 Flatbush Ave, Brooklyn, NY 11217</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="rave for ramen" data-tags="food meals nyc eats" data-date="2023-09-01 2023" data-excerpt="67 nassau st, new york, ny 10038">
+          <a class="card-image" href="posts/rave-for-ramen.html" aria-label="Read Rave for Ramen">
+            <img src="assets/images/rave-for-ramen-01.jpg" alt="Rave for Ramen" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/rave-for-ramen.html">Rave for Ramen</a></h3>
+            <p>67 Nassau St, New York, NY 10038</p>
+            <div class="tag-row"><span>Food</span><span>Meals</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="birthday brunch" data-tags="food dessert meals nyc eats celebrations" data-date="2023-09-01 2023" data-excerpt="50 carmine st, new york, ny 10014">
+          <a class="card-image" href="posts/birthday-brunch.html" aria-label="Read Birthday Brunch">
+            <img src="assets/images/birthday-brunch-01.jpg" alt="Birthday Brunch" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/birthday-brunch.html">Birthday Brunch</a></h3>
+            <p>50 Carmine St, New York, NY 10014</p>
+            <div class="tag-row"><span>Food</span><span>Dessert</span><span>Meals</span></div>
+          </div>
+        </article>
+
+        <article class="post-card" data-title="healthy and tasty!" data-tags="food nyc eats" data-date="2023-09-01 2023" data-excerpt="108 macdougal st, new york, ny 10012">
+          <a class="card-image" href="posts/healthy-and-tasty.html" aria-label="Read Healthy and Tasty!">
+            <img src="assets/images/healthy-and-tasty-01.jpg" alt="Healthy and Tasty!" loading="lazy">
+          </a>
+          <div class="card-body">
+            <p class="post-meta">September 1, 2023</p>
+            <h3><a href="posts/healthy-and-tasty.html">Healthy and Tasty!</a></h3>
+            <p>108 MacDougal St, New York, NY 10012</p>
+            <div class="tag-row"><span>Food</span><span>NYC Eats</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="archive" class="archive-band">
+      <div class="section-heading">
+        <p class="eyebrow">Archive</p>
+        <h2>By year</h2>
+      </div>
+      <div class="year-list">
+        <a href="#journal" data-year="2026">2026<span>7 posts</span></a><a href="#journal" data-year="2025">2025<span>22 posts</span></a><a href="#journal" data-year="2024">2024<span>2 posts</span></a><a href="#journal" data-year="2023">2023<span>19 posts</span></a>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>A softer home for the archive</h2>
+      </div>
+      <p>This site preserves the public Blogger archive for <strong>Some of Sumi</strong> as a clean static food blog. Each entry keeps its original date, title, photos, and a link back to the Blogger post.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Some of Sumi. Migrated from <a href="https://someofsumi.blogspot.com/">Blogger</a>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
