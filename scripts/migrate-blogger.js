@@ -12,6 +12,43 @@ const SOURCE_FILES = [
 
 const EXCLUDED_SLUGS = new Set(["personal-business", "ramadan"]);
 
+const MANUAL_POSTS = [
+  {
+    title: "Ugly Chicken",
+    slug: "ugly-chicken",
+    date: "2026-06-19",
+    paragraphs: [
+      "Korean fried chicken from Ugly Chicken, crispy and saucy with a tiny Korean flag on top.",
+    ],
+    images: [
+      {
+        src: "assets/images/ugly-chicken-01.jpg",
+        alt: "Korean fried chicken from Ugly Chicken at an outdoor food event",
+        width: 1350,
+        height: 1800,
+      },
+    ],
+    tags: ["Food", "Meals", "NYC Eats"],
+  },
+  {
+    title: "Dave's Hot Chicken",
+    slug: "daves-hot-chicken",
+    date: "2026-06-23",
+    paragraphs: [
+      "Dave's Hot Chicken with crinkle fries, pickles, sauce, and a spicy chicken slider.",
+    ],
+    images: [
+      {
+        src: "assets/images/daves-hot-chicken-01.jpg",
+        alt: "Dave's Hot Chicken tray with chicken, crinkle fries, pickles, and sauce",
+        width: 1350,
+        height: 1800,
+      },
+    ],
+    tags: ["Food", "Meals"],
+  },
+];
+
 const MONTH_FORMAT = new Intl.DateTimeFormat("en", {
   month: "long",
   day: "numeric",
@@ -244,16 +281,39 @@ function buildPost(entry, usedSlugs) {
   };
 }
 
+function buildManualPost(post, usedSlugs) {
+  let slug = post.slug;
+  let suffix = 2;
+
+  while (usedSlugs.has(slug)) {
+    slug = `${post.slug}-${suffix}`;
+    suffix += 1;
+  }
+
+  usedSlugs.add(slug);
+
+  return {
+    ...post,
+    slug,
+    year: post.date.slice(0, 4),
+    prettyDate: MONTH_FORMAT.format(new Date(`${post.date}T00:00:00Z`)),
+    originalUrl: "",
+    excerpt: post.paragraphs[0] || "A small food memory from Some of Sumi.",
+  };
+}
+
 async function loadPosts() {
   const pages = await Promise.all(
     SOURCE_FILES.map(async (sourceFile) => JSON.parse(await fs.readFile(sourceFile, "utf8")))
   );
   const entries = pages.flatMap((page) => page.feed?.entry || []);
   const usedSlugs = new Set();
-
-  return entries
+  const bloggerPosts = entries
     .map((entry) => buildPost(entry, usedSlugs))
-    .filter((post) => !EXCLUDED_SLUGS.has(post.slug))
+    .filter((post) => !EXCLUDED_SLUGS.has(post.slug));
+  const manualPosts = MANUAL_POSTS.map((post) => buildManualPost(post, usedSlugs));
+
+  return [...bloggerPosts, ...manualPosts]
     .sort((firstPost, secondPost) => secondPost.date.localeCompare(firstPost.date));
 }
 
@@ -264,6 +324,11 @@ async function localizeImages(posts) {
     const localizedImages = [];
 
     for (const [imageIndex, image] of post.images.entries()) {
+      if (image.src.startsWith("assets/")) {
+        localizedImages.push(image);
+        continue;
+      }
+
       const filenameBase = `${post.slug}-${String(imageIndex + 1).padStart(2, "0")}`;
 
       try {
@@ -437,6 +502,9 @@ ${gallery}`;
 
 function buildPostPage(post, previousPost, nextPost) {
   const heroImage = post.heroImage ? ` style="--hero-image: url('../${escapeHtml(post.heroImage)}')"` : "";
+  const originalLink = post.originalUrl
+    ? `<p class="original-link"><a href="${escapeHtml(post.originalUrl)}">View original Blogger post</a></p>`
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -470,7 +538,7 @@ function buildPostPage(post, previousPost, nextPost) {
 
       <div class="post-content">
 ${postBodyMarkup(post)}
-        <p class="original-link"><a href="${escapeHtml(post.originalUrl)}">View original Blogger post</a></p>
+        ${originalLink}
       </div>
 
       <nav class="post-nav" aria-label="Adjacent posts">
@@ -1083,16 +1151,20 @@ for (const link of yearLinks) {
 }
 
 function buildReadme(posts) {
+  const bloggerPostCount = posts.filter((post) => post.originalUrl).length;
+  const manualPostCount = posts.length - bloggerPostCount;
+
   return `# Some of Sumi Food Blog
 
 This repository is a static migration of the public Blogger archive for [Some of Sumi](https://someofsumi.blogspot.com/).
 
 ## What was migrated
 
-- ${posts.length} Blogger posts
+- ${bloggerPostCount} Blogger posts
+- ${manualPostCount} added local photo posts
 - Original post titles and publish dates
 - Post text from the Blogger feed
-- ${posts.reduce((total, post) => total + post.images.length, 0)} food photos downloaded into \`assets/images\`
+- ${posts.reduce((total, post) => total + post.images.length, 0)} food photos stored in \`assets/images\`
 - Individual static pages in \`posts/\`
 - A searchable and filterable archive on \`index.html\`
 
