@@ -17,6 +17,15 @@ const EXCLUDED_SLUGS = new Set([
   "home-cooked-meals",
 ]);
 
+const POST_OVERRIDES = {
+  "healthy-and-tasty": {
+    title: "Acai bowls",
+    slug: "acai-bowls",
+    date: "2019-08-21",
+    imageAlt: "Acai bowls topped with fruit, coconut, and chocolate drizzle",
+  },
+};
+
 const MANUAL_POSTS = [
   {
     title: "Ugly Chicken",
@@ -255,17 +264,20 @@ async function downloadImage(image, filenameBase) {
 function buildPost(entry, usedSlugs) {
   const title = decodeHtml(entry.title?.$t || "Untitled");
   const published = entry.published?.$t || entry.updated?.$t || new Date().toISOString();
-  const date = published.slice(0, 10);
-  const year = date.slice(0, 4);
+  const originalDate = published.slice(0, 10);
   const content = entry.content?.$t || "";
   const paragraphs = extractParagraphs(content);
   const images = extractImages(content);
   const baseSlug = slugify(title);
-  let slug = baseSlug;
+  const override = POST_OVERRIDES[baseSlug] || {};
+  const finalTitle = override.title || title;
+  const date = override.date || originalDate;
+  const year = date.slice(0, 4);
+  let slug = override.slug || baseSlug;
   let suffix = 2;
 
   while (usedSlugs.has(slug)) {
-    slug = `${baseSlug}-${suffix}`;
+    slug = `${override.slug || baseSlug}-${suffix}`;
     suffix += 1;
   }
 
@@ -274,7 +286,7 @@ function buildPost(entry, usedSlugs) {
   const excerpt = paragraphs[0] || "A small food memory from Some of Sumi.";
 
   return {
-    title,
+    title: finalTitle,
     slug,
     date,
     year,
@@ -282,7 +294,10 @@ function buildPost(entry, usedSlugs) {
     originalUrl: getAlternateUrl(entry),
     paragraphs,
     excerpt,
-    images,
+    images: images.map((image, imageIndex) => ({
+      ...image,
+      alt: imageIndex === 0 && override.imageAlt ? override.imageAlt : image.alt,
+    })),
     tags: inferTags(title, paragraphs),
   };
 }
@@ -396,6 +411,10 @@ function buildIndex(posts) {
     return firstTag.localeCompare(secondTag);
   });
   const years = Array.from(new Set(posts.map((post) => post.year))).sort((firstYear, secondYear) => secondYear.localeCompare(firstYear));
+  const yearArchiveLink = (year) => {
+    const postCount = posts.filter((post) => post.year === year).length;
+    return `<a href="#journal" data-year="${year}">${year}<span>${postCount} ${postCount === 1 ? "post" : "posts"}</span></a>`;
+  };
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -471,7 +490,7 @@ ${posts.map(cardMarkup).join("\n")}
         <h2>By year</h2>
       </div>
       <div class="year-list">
-        ${years.map((year) => `<a href="#journal" data-year="${year}">${year}<span>${posts.filter((post) => post.year === year).length} posts</span></a>`).join("")}
+        ${years.map(yearArchiveLink).join("")}
       </div>
     </section>
 
