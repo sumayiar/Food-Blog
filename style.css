@@ -407,6 +407,13 @@ footer {
   font-size: clamp(3rem, 10vw, 7rem);
 }
 
+.post-subtitle {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  font-size: clamp(1.15rem, 2.3vw, 1.65rem);
+  font-weight: 800;
+}
+
 .post-hero .tag-row span {
   background: rgba(255, 255, 255, 0.88);
 }

@@ -39,14 +39,15 @@ const MANUAL_POSTS = [
     title: "Dave's Hot Chicken",
     slug: "daves-hot-chicken",
     date: "2026-06-23",
+    subtitle: "Mozarella stick, chicken tenders, and french fries",
     paragraphs: [
-      "Dave's Hot Chicken with crinkle fries, pickles, sauce, and a spicy chicken slider.",
+      "Mozarella stick, chicken tenders, and french fries",
     ],
     images: [
       {
         src: "assets/images/daves-hot-chicken-01.jpg",
-        alt: "Dave's Hot Chicken tray with chicken, crinkle fries, pickles, and sauce",
-        width: 1350,
+        alt: "Dave's Hot Chicken tray with a mozarella stick, chicken tenders, and french fries",
+        width: 1718,
         height: 1800,
       },
     ],
@@ -303,7 +304,7 @@ function buildManualPost(post, usedSlugs) {
     year: post.date.slice(0, 4),
     prettyDate: MONTH_FORMAT.format(new Date(`${post.date}T00:00:00Z`)),
     originalUrl: "",
-    excerpt: post.paragraphs[0] || "A small food memory from Some of Sumi.",
+    excerpt: post.subtitle || post.paragraphs[0] || "A small food memory from Some of Sumi.",
   };
 }
 
@@ -494,9 +495,14 @@ ${posts.map(cardMarkup).join("\n")}
 }
 
 function postBodyMarkup(post) {
-  const paragraphs = post.paragraphs.length > 0
-    ? post.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")
-    : `<p>A small food memory from Some of Sumi.</p>`;
+  const bodyParagraphs = post.subtitle
+    ? post.paragraphs.filter((paragraph) => paragraph !== post.subtitle)
+    : post.paragraphs;
+  const paragraphs = bodyParagraphs.length > 0
+    ? bodyParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")
+    : post.subtitle
+      ? ""
+      : `<p>A small food memory from Some of Sumi.</p>`;
   const gallery = post.images.length > 0
     ? `<div class="post-gallery">${post.images.map((image, imageIndex) => `<figure><img src="../${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || `${post.title} photo ${imageIndex + 1}`)}"><figcaption>${escapeHtml(post.title)}${post.images.length > 1 ? `, photo ${imageIndex + 1}` : ""}</figcaption></figure>`).join("")}</div>`
     : `<div class="post-placeholder post-placeholder-large" aria-hidden="true"><span>Some of Sumi</span></div>`;
@@ -509,6 +515,9 @@ function buildPostPage(post, previousPost, nextPost) {
   const heroImage = post.heroImage ? ` style="--hero-image: url('../${escapeHtml(post.heroImage)}')"` : "";
   const originalLink = post.originalUrl
     ? `<p class="original-link"><a href="${escapeHtml(post.originalUrl)}">View original Blogger post</a></p>`
+    : "";
+  const subtitle = post.subtitle
+    ? `\n          <p class="post-subtitle">${escapeHtml(post.subtitle)}</p>`
     : "";
 
   return `<!DOCTYPE html>
@@ -536,7 +545,7 @@ function buildPostPage(post, previousPost, nextPost) {
         <div>
           <a class="back-link" href="../index.html#journal">Back to journal</a>
           <p class="post-meta">${escapeHtml(post.prettyDate)}</p>
-          <h1>${escapeHtml(post.title)}</h1>
+          <h1>${escapeHtml(post.title)}</h1>${subtitle}
           <div class="tag-row">${tagMarkup(post.tags)}</div>
         </div>
       </header>
@@ -969,6 +978,13 @@ footer {
 .post-hero h1 {
   max-width: 13ch;
   font-size: clamp(3rem, 10vw, 7rem);
+}
+
+.post-subtitle {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  font-size: clamp(1.15rem, 2.3vw, 1.65rem);
+  font-weight: 800;
 }
 
 .post-hero .tag-row span {
