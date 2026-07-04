@@ -10,6 +10,8 @@ const SOURCE_FILES = [
   "/private/tmp/someofsumi-page2.json",
 ];
 
+const EXCLUDED_SLUGS = new Set(["personal-business"]);
+
 const MONTH_FORMAT = new Intl.DateTimeFormat("en", {
   month: "long",
   day: "numeric",
@@ -251,6 +253,7 @@ async function loadPosts() {
 
   return entries
     .map((entry) => buildPost(entry, usedSlugs))
+    .filter((post) => !EXCLUDED_SLUGS.has(post.slug))
     .sort((firstPost, secondPost) => secondPost.date.localeCompare(firstPost.date));
 }
 
