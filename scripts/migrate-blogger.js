@@ -10,7 +10,7 @@ const SOURCE_FILES = [
   "/private/tmp/someofsumi-page2.json",
 ];
 
-const EXCLUDED_SLUGS = new Set(["personal-business"]);
+const EXCLUDED_SLUGS = new Set(["personal-business", "ramadan"]);
 
 const MONTH_FORMAT = new Intl.DateTimeFormat("en", {
   month: "long",
@@ -155,7 +155,7 @@ function inferTags(title, paragraphs) {
     tags.add("NYC Eats");
   }
 
-  if (/(home|cooked|ramadan|personal|go-to|fuel)/.test(text)) {
+  if (/(home|cooked|personal|go-to|fuel)/.test(text)) {
     tags.add("Home");
   }
 
