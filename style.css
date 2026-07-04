@@ -265,6 +265,11 @@ footer {
   overflow: hidden;
 }
 
+.post-card.post-theme-july-fourth {
+  border-color: rgba(28, 76, 160, 0.34);
+  box-shadow: 0 14px 34px rgba(180, 36, 45, 0.16);
+}
+
 .post-card.is-hidden {
   display: none;
 }
@@ -345,6 +350,20 @@ footer {
   font-weight: 700;
 }
 
+.post-placeholder.post-theme-july-fourth {
+  background:
+    linear-gradient(135deg, rgba(28, 76, 160, 0.88) 0 32%, rgba(255, 255, 255, 0.92) 32% 64%, rgba(180, 36, 45, 0.88) 64% 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0 10px, transparent 10px 20px);
+  color: #17211f;
+  text-align: center;
+}
+
+.post-placeholder.post-theme-july-fourth span {
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.9);
+}
+
 .archive-band {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -400,6 +419,12 @@ footer {
   background:
     linear-gradient(90deg, rgba(16, 21, 20, 0.78), rgba(16, 21, 20, 0.24)),
     var(--hero-image, linear-gradient(135deg, var(--berry), var(--mint))) center / cover;
+}
+
+.post-hero.post-theme-july-fourth {
+  background:
+    linear-gradient(90deg, rgba(16, 21, 20, 0.72), rgba(16, 21, 20, 0.32)),
+    linear-gradient(135deg, #1c4ca0 0 34%, #fffdf8 34% 66%, #b4242d 66% 100%);
 }
 
 .post-hero h1 {

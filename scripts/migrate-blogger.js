@@ -28,6 +28,17 @@ const POST_OVERRIDES = {
 
 const MANUAL_POSTS = [
   {
+    title: "Carlota",
+    slug: "carlota",
+    date: "2026-07-04",
+    excerpt: "Photo coming tonight.",
+    placeholderLabel: "Photo coming tonight",
+    theme: "july-fourth",
+    paragraphs: [],
+    images: [],
+    tags: ["Food", "Dessert", "Celebrations"],
+  },
+  {
     title: "Ugly Chicken",
     slug: "ugly-chicken",
     date: "2026-06-19",
@@ -319,7 +330,7 @@ function buildManualPost(post, usedSlugs) {
     year: post.date.slice(0, 4),
     prettyDate: MONTH_FORMAT.format(new Date(`${post.date}T00:00:00Z`)),
     originalUrl: "",
-    excerpt: post.subtitle || post.paragraphs[0] || "A small food memory from Some of Sumi.",
+    excerpt: post.excerpt || post.subtitle || post.paragraphs[0] || "A small food memory from Some of Sumi.",
   };
 }
 
@@ -371,9 +382,13 @@ function tagMarkup(tags) {
   return tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
 }
 
+function themeClass(post) {
+  return post.theme ? ` post-theme-${escapeHtml(post.theme)}` : "";
+}
+
 function imageMarkup(post, prefix = "") {
   if (post.images.length === 0) {
-    return `<div class="post-placeholder" aria-hidden="true"><span>Some of Sumi</span></div>`;
+    return `<div class="post-placeholder${themeClass(post)}" aria-hidden="true"><span>${escapeHtml(post.placeholderLabel || "Some of Sumi")}</span></div>`;
   }
 
   if (post.images.length === 1) {
@@ -389,7 +404,7 @@ function imageMarkup(post, prefix = "") {
 
 function cardMarkup(post) {
   return `
-        <article class="post-card" data-title="${escapeHtml(post.title.toLowerCase())}" data-tags="${escapeHtml(post.tags.join(" ").toLowerCase())}" data-date="${escapeHtml(`${post.date} ${post.year}`)}" data-excerpt="${escapeHtml(post.excerpt.toLowerCase())}">
+        <article class="post-card${themeClass(post)}" data-title="${escapeHtml(post.title.toLowerCase())}" data-tags="${escapeHtml(post.tags.join(" ").toLowerCase())}" data-date="${escapeHtml(`${post.date} ${post.year}`)}" data-excerpt="${escapeHtml(post.excerpt.toLowerCase())}">
           <a class="card-image" href="posts/${escapeHtml(post.slug)}.html" aria-label="Read ${escapeHtml(post.title)}">
             ${imageMarkup(post)}
           </a>
@@ -518,12 +533,12 @@ function postBodyMarkup(post) {
     : post.paragraphs;
   const paragraphs = bodyParagraphs.length > 0
     ? bodyParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")
-    : post.subtitle
+    : post.subtitle || post.placeholderLabel
       ? ""
       : `<p>A small food memory from Some of Sumi.</p>`;
   const gallery = post.images.length > 0
     ? `<div class="post-gallery">${post.images.map((image, imageIndex) => `<figure><img src="../${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || `${post.title} photo ${imageIndex + 1}`)}"><figcaption>${escapeHtml(post.title)}${post.images.length > 1 ? `, photo ${imageIndex + 1}` : ""}</figcaption></figure>`).join("")}</div>`
-    : `<div class="post-placeholder post-placeholder-large" aria-hidden="true"><span>Some of Sumi</span></div>`;
+    : `<div class="post-placeholder post-placeholder-large${themeClass(post)}" aria-hidden="true"><span>${escapeHtml(post.placeholderLabel || "Some of Sumi")}</span></div>`;
 
   return `${paragraphs}
 ${gallery}`;
@@ -559,7 +574,7 @@ function buildPostPage(post, previousPost, nextPost) {
 
   <main>
     <article class="single-post">
-      <header class="post-hero"${heroImage}>
+      <header class="post-hero${themeClass(post)}"${heroImage}>
         <div>
           <a class="back-link" href="../index.html#journal">Back to journal</a>
           <p class="post-meta">${escapeHtml(post.prettyDate)}</p>
@@ -856,6 +871,11 @@ footer {
   overflow: hidden;
 }
 
+.post-card.post-theme-july-fourth {
+  border-color: rgba(28, 76, 160, 0.34);
+  box-shadow: 0 14px 34px rgba(180, 36, 45, 0.16);
+}
+
 .post-card.is-hidden {
   display: none;
 }
@@ -936,6 +956,20 @@ footer {
   font-weight: 700;
 }
 
+.post-placeholder.post-theme-july-fourth {
+  background:
+    linear-gradient(135deg, rgba(28, 76, 160, 0.88) 0 32%, rgba(255, 255, 255, 0.92) 32% 64%, rgba(180, 36, 45, 0.88) 64% 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0 10px, transparent 10px 20px);
+  color: #17211f;
+  text-align: center;
+}
+
+.post-placeholder.post-theme-july-fourth span {
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.9);
+}
+
 .archive-band {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -991,6 +1025,12 @@ footer {
   background:
     linear-gradient(90deg, rgba(16, 21, 20, 0.78), rgba(16, 21, 20, 0.24)),
     var(--hero-image, linear-gradient(135deg, var(--berry), var(--mint))) center / cover;
+}
+
+.post-hero.post-theme-july-fourth {
+  background:
+    linear-gradient(90deg, rgba(16, 21, 20, 0.72), rgba(16, 21, 20, 0.32)),
+    linear-gradient(135deg, #1c4ca0 0 34%, #fffdf8 34% 66%, #b4242d 66% 100%);
 }
 
 .post-hero h1 {
@@ -1200,7 +1240,7 @@ This repository is a static migration of the public Blogger archive for [Some of
 ## What was migrated
 
 - ${bloggerPostCount} Blogger posts
-- ${manualPostCount} added local photo posts
+- ${manualPostCount} added local posts
 - Original post titles and publish dates
 - Post text from the Blogger feed
 - ${posts.reduce((total, post) => total + post.images.length, 0)} food photos stored in \`assets/images\`

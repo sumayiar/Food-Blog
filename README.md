@@ -5,7 +5,7 @@ This repository is a static migration of the public Blogger archive for [Some of
 ## What was migrated
 
 - 46 Blogger posts
-- 2 added local photo posts
+- 3 added local posts
 - Original post titles and publish dates
 - Post text from the Blogger feed
 - 68 food photos stored in `assets/images`
