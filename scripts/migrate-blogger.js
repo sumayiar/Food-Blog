@@ -10,7 +10,12 @@ const SOURCE_FILES = [
   "/private/tmp/someofsumi-page2.json",
 ];
 
-const EXCLUDED_SLUGS = new Set(["personal-business", "ramadan", "strawberry-milkshake"]);
+const EXCLUDED_SLUGS = new Set([
+  "personal-business",
+  "ramadan",
+  "strawberry-milkshake",
+  "home-cooked-meals",
+]);
 
 const MANUAL_POSTS = [
   {
